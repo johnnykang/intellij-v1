@@ -1,0 +1,38 @@
+<idea-plugin>
+    <id>net.nearwood.v1</id>
+    <name>VersionOne Integration</name>
+    <vendor email="nearwood@gmail.com" url="https://www.nearwood.net">Nick Earwood</vendor>
+
+    <description><![CDATA[Perform VersionOne (V1) actions directly, without leaving the comfort of your IDE.]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+    <category>Tools Integration</category>
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="162"/>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <!-- project-components>
+        <component>
+            <implementation-class>MainComponent</implementation-class>
+        </component>
+    </project-components -->
+
+    <!-- actions>
+        <group id="MyPlugin.SampleMenu" text="Greeting" description="Greeting menu">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action id="Myplugin.Textboxes" class="HelloAction" text="Hello" description="Says hello"/>
+        </group>
+    </actions -->
+    <application-components>
+        <component>
+            <implementation-class>MainComponent</implementation-class>
+        </component>
+    </application-components>
+</idea-plugin>
