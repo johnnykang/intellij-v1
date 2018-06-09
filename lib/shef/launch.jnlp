@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jnlp codebase="http://shef.sourceforge.net" href="launch.jnlp" spec="1.0+">
+    <information>
+        <title>SHEF</title>
+        <vendor>Bob Tantlinger</vendor>
+        <homepage href="http://shef.sourceforge.net"/>
+        <description>Swing HTML Editor Framework</description>
+        <description kind="short">SHEF</description>
+    <offline-allowed/>
+</information>
+<security>
+<all-permissions/>
+</security>
+    <resources>
+<j2se version="1.5+"/>
+<jar eager="true" href="SHEF.jar" main="true"/>
+    <jar href="lib/jtidy-8.0.jar"/>
+<jar href="lib/novaworx-syntax-0.0.7.jar"/>
+<jar href="lib/sam.jar"/>
+</resources>
+    <application-desc main-class="net.atlanticbb.tantlinger.shef.Demo">
+    </application-desc>
+</jnlp>

@@ -7,32 +7,105 @@
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
-    <!-- uncomment to enable plugin in all products
+    <!-- uncomment to enable plugin in all products -->
     <depends>com.intellij.modules.lang</depends>
-    -->
+
     <category>Tools Integration</category>
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
     <idea-version since-build="162"/>
 
     <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
+        <applicationService serviceInterface="com.versionone.integration.idea.WorkspaceSettings"
+                            serviceImplementation="com.versionone.integration.idea.WorkspaceSettings"/>
+        <projectConfigurable instance="com.versionone.integration.idea.MainSettings"/>
     </extensions>
 
-    <!-- project-components>
+    <project-components>
         <component>
-            <implementation-class>MainComponent</implementation-class>
+            <implementation-class>com.versionone.integration.idea.MainSettings</implementation-class>
         </component>
-    </project-components -->
+        <component>
+            <implementation-class>com.versionone.integration.idea.TasksComponent</implementation-class>
+        </component>
+        <component>
+            <implementation-class>com.versionone.integration.idea.WorkspaceSettings</implementation-class>
+        </component>
+        <component>
+            <implementation-class>com.versionone.integration.idea.DetailsComponent</implementation-class>
+        </component>
+    </project-components>
 
-    <!-- actions>
-        <group id="MyPlugin.SampleMenu" text="Greeting" description="Greeting menu">
-            <add-to-group group-id="MainMenu" anchor="last"/>
-            <action id="Myplugin.Textboxes" class="HelloAction" text="Hello" description="Says hello"/>
+    <actions>
+        <group id="V1.ToolWindow">
+            <action id="V1.AddDefect"
+                    class="com.versionone.integration.idea.actions.AddDefectAction"
+                    text="Add new Defect"
+                    description="Add new Defect"/>
+            <action id="V1.AddTask"
+                    class="com.versionone.integration.idea.actions.AddTaskAction"
+                    text="Add new task"
+                    description="Add new task to VersionOne."/>
+            <action id="V1.AddTest"
+                    class="com.versionone.integration.idea.actions.AddTestAction"
+                    text="Add new test"
+                    description="Add new test to VersionOne."/>
+
+
+            <separator/>
+            <action id="V1.ShowAllTaskFilter"
+                    class="com.versionone.integration.idea.actions.ShowAllItemFilterAction"
+                    text="Show only my workitems."
+                    description="Show only my workitems" />
+            <action id="V1.SelectProject"
+                    class="com.versionone.integration.idea.actions.FilterAction"
+                    text="Select project"
+                    description="Switch to another project"/>
+
+            <separator/>
+
+            <action id="V1.toolRefresh"
+                    class="com.versionone.integration.idea.actions.RefreshAction"
+                    text="Refresh" description="Refresh tasks data from VersionOne.">
+                <keyboard-shortcut keymap="$default" first-keystroke="F5"/>
+            </action>
+            <action id="V1.SaveData"
+                    class="com.versionone.integration.idea.actions.SaveDataAction"
+                    text="Save" description="Save data to VersionOne."/>
+
+            <separator />
+
+            <action id="V1.Help"
+                    class="com.versionone.integration.idea.actions.HelpAction"
+                    text="Help" description="Help"/>
         </group>
-    </actions -->
-    <application-components>
-        <component>
-            <implementation-class>MainComponent</implementation-class>
-        </component>
-    </application-components>
+
+        <group id="V1.ToolWindow.ContextMenu" popup="true">
+            <action id="V1.Workitem.Close"
+                    class="com.versionone.integration.idea.actions.CloseWorkitemAction"
+                    text="Close..."
+                    description="Close current Workitem" />
+            <action id="V1.Workitem.QuickClose"
+                    class="com.versionone.integration.idea.actions.QuickCloseWorkitemAction"
+                    text="Quick close"
+                    description="Quick close current Workitem" />
+            <separator />
+            <action id="V1.Workitem.Signup"
+                    class="com.versionone.integration.idea.actions.SignupAction"
+                    text="Sign me up"
+                    description="Execute Signup operation for the current Workitem" />
+            <separator />
+            <action id="V1.ContextMenu.AddDefect"
+                    class="com.versionone.integration.idea.actions.AddDefectAction"
+                    text="Add new Defect"
+                    description="Add new Defect"/>
+            <action id="V1.ContextMenu.AddTask"
+                    class="com.versionone.integration.idea.actions.AddTaskAction"
+                    text="Add new Task"
+                    description="Add new Task"/>
+            <action id="V1.ContextMenu.AddTest"
+                    class="com.versionone.integration.idea.actions.AddTestAction"
+                    text="Add new Test"
+                    description="Add new Test"/>
+        </group>
+    </actions>
 </idea-plugin>
