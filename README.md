@@ -20,4 +20,5 @@ I have converted this to a Gradle project, and migrated obsolete/renamed APIs.
 ### External links
 
 [IntelliJ Platform SDK Docs](http://www.jetbrains.org/intellij/sdk/docs/welcome.html)
+
 [VersionOne API Client Javadocs](https://versionone.github.io/VersionOne.SDK.Java.APIClient/)
