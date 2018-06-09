@@ -2,13 +2,15 @@
     <id>net.nearwood.v1</id>
     <name>VersionOne Integration</name>
     <vendor email="nearwood@gmail.com" url="https://www.nearwood.net">Nick Earwood</vendor>
-
-    <description><![CDATA[Perform VersionOne (V1) actions directly, without leaving the comfort of your IDE.]]></description>
+    <version>1.0</version>
+    <description><![CDATA[Perform VersionOne (V1) actions directly, without leaving the comfort of your IDE. This is a manual fork of https://github.com/versionone/VersionOne.Integration.IntelliJ-IDEA]]></description>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
     <!-- uncomment to enable plugin in all products -->
     <depends>com.intellij.modules.lang</depends>
+
+    <change-notes>Initial release of the plugin.</change-notes>
 
     <category>Tools Integration</category>
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
